@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>SunsetWebSite</title>
+    <link rel="shortcut icon" href="common/images/favicon.ico">
+    <link rel="apple-touch-icon" href="common/images/apple-touch-icon.png">
+    <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="common/css/style_amida.css">
+        
+</head>
+
+<body>
+
+    <header id="header">
+        <h1 class="site-logo"><a href="../Top/index.html"><img src="common/images/logo.png" alt="Sunset's Web site"></a></h1>
+        <nav class="header-nav">
+            <ul class="header-nav-links">
+                <li class="header-nav-item"><a href="../Error/error.html" class="btn nav-button"><span>日記</span></a></li>
+                <li class="header-nav-item"><a href="../Production/production.html" class="btn nav-button"><span>成果物</span></a></li>
+                <li class="header-nav-item"><a href="../Error/error.html" class="btn nav-button"><span>雑談</span></a></li>
+            </ul>
+        </nav><!-- /nav -->
+    </header><!-- /header -->
+
+    <main id="main">
+    <!--記事の本編-->
+        <section class="box-inner">
+            <div class="title">
+                <div class="title-square"></div>
+                <h2 class="box-title">AmidA</h2><!--記事のタイトル-->
+            </div>
+            <!--ゲームのリンク-->
+            <a href="" class="btn play-button"><span>鋭意制作中!!</span></a>
+
+            <div class="text1">
+                <h3 class="text-title">
+                    ～ゲーム紹介～
+                </h3>
+                <p class="text1-inner">
+                    このゲームはあみだくじのように線を引いて相手に攻撃をするゲームです。<br />
+                    自分の陣地には4つの施設があり、それぞれ攻撃、防御、生産、廃棄をすえう役割に分かれています。<br />
+                    また、4本の線が相手の施設とまっすぐにひかれており、横線を引くことで攻撃やアイテムを誘導することができます。<br />
+                    相手の攻撃を防御で受けるなど、アイテムを対応する施設で受け取るとSPがたまり、<br />
+                    特別なスキルが使えるような要素もあります。<br />
+                </p>
+            </div>
+
+            <div class="text2">
+                <h3 class="text-title">
+                    ～制作の話～
+                </h3>
+                <p class="text2-inner">
+                    このゲームは現在作成中で大学の友人3人とUnityで制作しています。<br />
+                    バージョン管理はGithubを用いて管理しています。<br />
+                    私はゲームの企画やプログラミングなどを担当しています。
+                </p>
+
+                <p class="text2-inner">
+                    現在時点で作成したものを紹介します。<br />
+                    <br />
+                    ・タイトル、メインメニュー画面<br />
+                    <br />
+                    タイトルのロゴを自作しました。<br />
+                    また、仮ですがゲームのタイトル画面とメインメニュー画面を作成しました。<br />
+                    ボタンなどのUIはそのまま使おうとすると実にありきたりで面白みに欠けると思ったので、<br />
+                    シェーダーとマテリアルを勉強し、シェーダーグラフを用いて様々な模様や表現ができるように努力しました。
+                </p>
+                <video controls playsinline muted src="common/videos/titleUI.mp4" class="text2-video"></video>
+                <video controls playsinline muted src="common/videos/menuUI.mp4" class="text2-video"></video>
+                <p class="text2-inner">
+                    <br />
+                    ・ゲーム画面<br />
+                    <br />
+                    簡易的ですがゲーム画面を作成しました。<br />
+                    線が引けるようになっています。<br />
+                    また、攻撃用のオブジェクトはしっかり線の上を動くようにしました。<br />
+                    また、UIを作成して、SPや施設のゲージを視認できるようにしました。<br />
+                    現在はスキルの開発や3Dモデルや背景の作成、オンラインマッチングのプログラムの開発、リッチなUIの作成などができるように鋭意制作中です。
+                </p>
+                <video controls playsinline muted src="common/videos/gameplay.mp4" class="text2-video"></video>
+            </div>
+        </section>
+    </main><!-- /main -->
+
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-icon">
+                <img src="common/images/pityu_summer_circle.png" alt="Pityu_Summer" />
+                <nav class="footer-nav">
+                    <ul class="footer-nav-links">
+                        <li class="footer-nav-item"><a href="https://github.com/Shiny-Sunset" class="btn footer-nav-button"><span>Github</span></a></li>
+                        <li class="footer-nav-item"><a href="../Error/error.html" class="btn footer-nav-button"><span>Youtube</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-text">
+                <div class="role">
+                    <div class="role-square"></div>
+                    <p class="footer-self-introduction-role">運営者</p>
+                </div>
+                <p class="footer-self-introduction-name">Sunset</p>
+                <p class="footer-self-introduction-university">東京電機大学在学</p>
+                <p class="footer-self-introduction-comment">
+                    こんにちは！Sunsetです。大学生です。<br />
+                    ゲームが大好きで将来はゲームプログラマー目指してます。
+                </p>
+            </div>
+        </div>
+    </footer><!-- /footer -->
+</body>
+</html>

@@ -1,0 +1,351 @@
+﻿*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%; /*rem算出をしやすくするために*/
+}
+
+.btn,
+a.btn,
+button.btn {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+}
+
+p, ol, ul, li {
+    margin: 0; /* 上下左右に0pxの外側の余白 */
+    padding: 0; /* 上下左右に0pxの内側の余白 */
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: normal; /* 文字の太さが標準設定 */
+    margin: 0; /* 上下左右に0pxの外側の余白 */
+    padding: 0; /* 上下左右に0pxの内側の余白 */
+}
+
+li {
+    list-style: none; /* リストのマーカーをなしに設定 */
+}
+
+.box-title-error {
+    color: red;
+    font-size: 3rem;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex; /* flexboxの使用宣言 */
+    justify-content: space-around;
+    align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
+    margin: 0 auto; /* 横幅中央に揃える */
+    height: 18rem; /* 高さを設定 */
+    width: 100%;
+    background-color: #E2F9FF;
+}
+
+.site-logo {
+    width: 252px; /* 幅を設定 */
+    height: 96px; /* 高さを設定 */
+}
+
+.header-nav-links {
+    display: flex; /* flexboxの使用宣言 */
+}
+
+.header-nav-item {
+    margin-right: 32px; /* 左側に32pxの外側の余白 */
+}
+
+a.nav-button {
+    overflow: hidden;
+    padding: 1.5rem 6rem;
+    color: #fff;
+    border-radius: 0;
+    background: #000;
+    display: flex;
+    align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
+    justify-content: center;
+    width: 24rem;
+    height: 12rem;
+    font-size: 3rem;
+}
+
+    a.nav-button span {
+        position: relative;
+    }
+
+    a.nav-button:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        -webkit-transform: translateX(-96%);
+        transform: translateX(-96%);
+        background: #eb6877;
+    }
+
+    a.nav-button:hover:before {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+
+/* 1つ目のボタンの背景色を変更 */
+.header-nav-links li:nth-child(1) .nav-button:before {
+    background-color: red;
+}
+
+/* 2つ目のボタンの背景色を変更 */
+.header-nav-links li:nth-child(2) .nav-button:before {
+    background-color: green;
+}
+
+/* 3つ目のボタンの背景色を変更 */
+.header-nav-links li:nth-child(3) .nav-button:before {
+    background-color: blue;
+}
+
+#main {
+    background-color: #DFFFC9;
+    margin-top: 18rem;
+    position: relative;
+}
+
+.box-inner {
+    display: flex; /* flexboxの使用宣言 */
+    height: 500px; /* 高さを設定 */
+    justify-content: center;
+    align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
+    margin: 0 auto; /* 横幅中央に揃える */
+}
+
+    .box-inner .text {
+        display: flex;
+        height: 500px;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 300px;
+    }
+
+    .box-inner .image {
+        margin-left: 300px;
+    }
+
+.box-title {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.comment {
+    font-size: 3rem;
+    color: red;
+    margin-top: 20px;
+}
+
+.page-list {
+    display: flex; /* flexboxの使用宣言 */
+    justify-content: center;
+    align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
+    margin: 0 auto; /* 横幅中央に揃える */
+    height: 400px; /* 高さを設定 */
+    background-color: #E2E2FF;
+}
+
+a.main-button {
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0;
+    background-image: -webkit-gradient(linear, left top, right top, from(#fa709a), to(#fee140));
+    background-image: -webkit-linear-gradient(left, #fa709a 0%, #fee140 100%);
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
+    justify-content: center;
+    width: 40rem;
+    height: 24rem;
+    font-size: 6rem;
+    margin: 5rem;
+}
+
+    a.main-button:hover {
+        -webkit-transform: translate(0, -2px);
+        transform: translate(0, -2px);
+        color: #fff;
+        -webkit-box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+    }
+
+/* 1つ目のボタンの背景色を変更 */
+.page-list li:nth-child(1) .main-button {
+    background-image: -webkit-gradient(linear, left top, right top, from(#4200B5), to(#b740f7));
+    background-image: -webkit-linear-gradient(left, #4200B5 0%, #b740f7 100%);
+    background-image: linear-gradient(to right, #4200B5 0%, #b740f7 100%);
+}
+
+/* 2つ目のボタンの背景色を変更 */
+.page-list li:nth-child(2) .main-button {
+    background-image: -webkit-gradient(linear, left top, right top, from(#F385FF), to(#62f740));
+    background-image: -webkit-linear-gradient(left, #F385FF 0%, #62f740 100%);
+    background-image: linear-gradient(to right, #F385FF 0%, #62f740 100%);
+}
+
+/* 3つ目のボタンの背景色を変更 */
+.page-list li:nth-child(3) .main-button {
+    background-image: -webkit-gradient(linear, left top, right top, from(#00ffbb), to(#fee140));
+    background-image: -webkit-linear-gradient(left, #00ffbb 0%, #fee140 100%);
+    background-image: linear-gradient(to right, #00ffbb 0%, #fee140 100%);
+}
+
+#footer {
+    background-color: #E0C2FF; /* 背景色を設定 */
+    width: 100%;
+    display: flex; /* flexboxの使用宣言 */
+    justify-content: center;
+}
+
+.footer-inner {
+    display: flex; /* flexboxの使用宣言 */
+    justify-content: center;
+    align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
+    margin: 0 auto;
+    width: 1520px;
+    height: 360px;
+    background-color: #F7FFC1;
+    margin: 2rem;
+}
+
+.footer-icon {
+    display: flex; /* flexboxの使用宣言 */
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-nav-links {
+    display: flex; /* flexboxの使用宣言 */
+    margin-top: 2rem;
+}
+
+a.footer-nav-button {
+    color: #fff;
+    border-top: 4px solid #48ecc4;
+    border-right: 4px solid #0a5f4a;
+    border-bottom: 4px solid #0f745b;
+    border-left: 4px solid #8cf9de;
+    border-radius: 0;
+    background: #11a37f;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
+    justify-content: center;
+}
+
+    a.footer-nav-button:hover {
+        color: #fff;
+        border-top: 4px solid #0f745b;
+        border-right: 4px solid #8cf9de;
+        border-bottom: 4px solid #48ecc4;
+        border-left: 4px solid #0a5f4a;
+    }
+
+/* 1つ目のボタンの背景色を変更 */
+.footer-nav-links li:nth-child(1) .footer-nav-button {
+    background-color: #9c9c9c;
+    border-top: 4px solid #C5C5C5;
+    border-right: 4px solid #4E4E4E;
+    border-bottom: 4px solid #6B6B6B;
+    border-left: 4px solid #D1D1D1;
+}
+    .footer-nav-links li:nth-child(1) .footer-nav-button:hover {
+        background-color: #9c9c9c;
+        border-bottom: 4px solid #C5C5C5;
+        border-left: 4px solid #4E4E4E;
+        border-top: 4px solid #6B6B6B;
+        border-right: 4px solid #D1D1D1;
+    }
+
+/* 2つ目のボタンの背景色を変更 */
+.footer-nav-links li:nth-child(2) .footer-nav-button {
+    background-color: #E90000;
+    border-top: 4px solid #FF3E3E;
+    border-right: 4px solid #870000;
+    border-bottom: 4px solid #AE0000;
+    border-left: 4px solid #FF7878;
+}
+
+    .footer-nav-links li:nth-child(2) .footer-nav-button:hover {
+        background-color: #E90000;
+        border-bottom: 4px solid #FF3E3E;
+        border-left: 4px solid #870000;
+        border-top: 4px solid #AE0000;
+        border-right: 4px solid #FF7878;
+    }
+
+.role {
+    display: flex; /* flexboxの使用宣言 */
+    align-items: center;
+}
+.role-square {
+    width: 0.8rem;
+    height: 2rem;
+    background: #DB33EE;
+    margin-right: 0.5rem;
+}
+
+.footer-text {
+    display: flex; /* flexboxの使用宣言 */
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 30rem;
+    margin-left: 15rem;
+}
+
+.footer-self-introduction-role {
+    font-size: 2rem;
+}
+
+.footer-self-introduction-name {
+    font-size: 6rem;
+}
+
+.footer-self-introduction-university {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+}
+
+.footer-self-introduction-comment {
+    font-size: 2rem;
+}
