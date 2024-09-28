@@ -138,6 +138,7 @@ a.nav-button {
     background-color: #FFE924;
     margin-top: 20vh;
     position: relative;
+    width: 100%;
 }
 .box-inner {
     display: flex; /* flexboxの使用宣言 */
@@ -183,11 +184,11 @@ a.play-button {
     background: -webkit-linear-gradient(top, #36ffd3 0%, #4050ff 100%);
     background: linear-gradient(to bottom, #36ffd3 0%, #4050ff 100%);
     width: 50rem;
-    height: 12rem;
+    height: 10rem;
     margin: 1rem;
     position: absolute;
     top: 10rem;
-    right: 20rem;
+    right: 2vw;
     font-size: 5rem;
     display: flex;
     align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
@@ -219,11 +220,12 @@ a.play-button {
 
 .text2-inner {
     font-size: 3rem;
+    width: 50vw;
 }
 
 .text2-image {
     position: absolute;
-    left: 105rem;
+    left: 50vw;
     top: 10rem;
 }
 
