@@ -64,14 +64,14 @@ li {
     justify-content: space-around;
     align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
     margin: 0 auto; /* 横幅中央に揃える */
-    height: 18rem; /* 高さを設定 */
+    height: 20vh; /* 高さを設定 */
     width: 100%;
     background-color: #E2F9FF;
 }
 
-.site-logo {
-    width: 252px; /* 幅を設定 */
-    height: 96px; /* 高さを設定 */
+.site-logo a img {
+    width: 29.6vw; /* 幅を設定 */
+    height: 4.8vw; /* 高さを設定 */
 }
 
 .header-nav-links {
@@ -79,7 +79,7 @@ li {
 }
 
 .header-nav-item {
-    margin-right: 32px; /* 左側に32pxの外側の余白 */
+    margin-right: 2vw; /* 左側に32pxの外側の余白 */
 }
 
 a.nav-button {
@@ -91,9 +91,9 @@ a.nav-button {
     display: flex;
     align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
     justify-content: center;
-    width: 24rem;
-    height: 12rem;
-    font-size: 3rem;
+    width: 10vw;
+    height: 10vh;
+    font-size: 1vw;
 }
 
     a.nav-button span {
@@ -136,7 +136,7 @@ a.nav-button {
 
 #main {
     background-color: #C2ECFF;
-    margin-top: 18rem;
+    margin-top: 20vh;
     position: relative;
 }
 .box-inner {
@@ -244,8 +244,8 @@ a.play-button {
     justify-content: center;
     align-items: center; /* flexboxにしたアイテムの高さを中央に揃える */
     margin: 0 auto;
-    width: 1520px;
-    height: 360px;
+    width: 80vw;
+    height: 40vh;
     background-color: #F7FFC1;
     margin: 2rem;
 }
@@ -254,11 +254,13 @@ a.play-button {
     display: flex; /* flexboxの使用宣言 */
     flex-direction: column;
     justify-content: center;
+    width: 15vw;
+    height: 15vw;
 }
 
 .footer-nav-links {
     display: flex; /* flexboxの使用宣言 */
-    margin-top: 2rem;
+    justify-content: center;
 }
 
 a.footer-nav-button {
@@ -269,8 +271,8 @@ a.footer-nav-button {
     border-left: 4px solid #8cf9de;
     border-radius: 0;
     background: #11a37f;
-    width: 10rem;
-    height: 3rem;
+    width: 5vw;
+    height: 2vh;
     font-size: 1rem;
     margin: 1rem;
     display: flex;
@@ -336,8 +338,8 @@ a.footer-nav-button {
     display: flex; /* flexboxの使用宣言 */
     flex-direction: column;
     justify-content: center;
-    margin-right: 30rem;
-    margin-left: 15rem;
+    margin-right: 10vw;
+    margin-left: 5vw;
 }
 
 .footer-self-introduction-role {
