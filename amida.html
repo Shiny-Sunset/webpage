@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ja">
 <head>
@@ -8,7 +8,6 @@
     <link rel="apple-touch-icon" href="common/images/apple-touch-icon.png">
     <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
     <link rel="stylesheet" href="common/css/style_amida.css">
-        
 </head>
 
 <body>
@@ -25,14 +24,15 @@
     </header><!-- /header -->
 
     <main id="main">
-    <!--記事の本編-->
         <section class="box-inner">
             <div class="title">
                 <div class="title-square"></div>
-                <h2 class="box-title">AmidA (2024/10/10更新)</h2><!--記事のタイトル-->
+                <h2 class="box-title">AmidA</h2>
             </div>
-            <!--ゲームのリンク-->
-            <a href="" class="btn play-button"><span>鋭意制作中!!</span></a>
+
+            <p style="font-size:2.5rem; background:#888; color:#fff; display:inline-block; padding:0.8rem 3rem; border-radius:0.5rem; margin:2rem 0;">
+                このプロジェクトは制作中止となりました
+            </p>
 
             <div class="text1">
                 <h3 class="text-title">
@@ -42,15 +42,9 @@
                     このゲームはあみだくじのように線を引いて相手に攻撃をするゲームです。<br />
                     自分の陣地には4つの施設があり、それぞれ攻撃、防御、生産、廃棄をする役割に分かれています。<br />
                     また、4本の線が相手の施設とまっすぐにひかれており、横線を引くことで攻撃やアイテムを誘導することができます。<br />
-                    相手の攻撃を防御で受けるなど、アイテムを対応する施設で受け取るとSPがたまり、<br />
-                    特別なスキルが使えるような要素もあります。<br />
-                    ～追記(2024/9/1)～<br />
                     施設には貯蓄できるエネルギーが制限されており、それを超えるとプレイヤーのHPが減るようになっています。<br />
-                    攻撃するときに出る弾はエネルギーの塊で、施設に触れると塊が持つエネルギー分が施設に強制的に供給されるようになっています。<br />
-                    よって、攻撃施設では攻撃時にはエネルギーが必要ですが、エネルギーの溜めすぎに注意しなければなりません。<br />
-                    防御施設は弾から受けるエネルギー量を減らし、多くのエネルギーを溜めることができます。<br />
-                    生産施設はエネルギーを生産します。<br />
-                    廃棄施設は増えすぎたエネルギーを捨てることができます。
+                    攻撃施設は攻撃時にエネルギーを消費し、防御施設は弾から受けるエネルギー量を減らし多くのエネルギーを溜めることができます。<br />
+                    生産施設はエネルギーを生産し、廃棄施設は増えすぎたエネルギーを捨てることができます。
                 </p>
             </div>
 
@@ -59,20 +53,18 @@
                     ～制作の話～
                 </h3>
                 <p class="text2-inner">
-                    このゲームは現在作成中で大学の友人3人とUnityで制作しています。<br />
-                    バージョン管理はGithubを用いて管理しています。<br />
-                    私はゲームの発案、計画、ゲームシステムのプログラミング、シェーダーの作成、UIの作成、タイトルロゴの作成を担当しています。
+                    このゲームは大学の友人3人とUnityで制作していました。<br />
+                    バージョン管理はGithubを用いて管理していました。<br />
+                    私はゲームの発案、計画、ゲームシステムのプログラミング、シェーダーの作成、UIの作成、タイトルロゴの作成を担当していました。
                 </p>
 
                 <p class="text2-inner">
-                    ～2024/9/1時点の進捗～<br />
+                    ～制作中の進捗（記録）～<br />
                     <br />
                     ・タイトル、メインメニュー画面<br />
                     <br />
                     タイトルのロゴを自作しました。<br />
-                    また、仮ですがゲームのタイトル画面とメインメニュー画面を作成しました。<br />
-                    ボタンなどのUIはそのまま使おうとすると実にありきたりで面白みに欠けると思ったので、<br />
-                    シェーダーとマテリアルを勉強し、シェーダーグラフを用いて様々な模様や表現ができるように努力しました。
+                    シェーダーグラフを用いて様々な模様や表現ができるようなUIを作成しました。
                 </p>
                 <video controls playsinline muted src="common/videos/titleUI.mp4" class="text2-video"></video>
                 <video controls playsinline muted src="common/videos/menuUI.mp4" class="text2-video"></video>
@@ -80,52 +72,17 @@
                     <br />
                     ・ゲーム画面<br />
                     <br />
-                    簡易的ですがゲーム画面を作成しました。<br />
-                    線が引けるようになっています。<br />
-                    また、攻撃用のオブジェクトはしっかり線の上を動くようにしました。<br />
-                    また、UIを作成して、SPや施設のゲージを視認できるようにしました。<br />
-                    現在はスキルの開発や3Dモデルや背景の作成、オンラインマッチングのプログラムの開発、リッチなUIの作成などができるように鋭意制作中です。
+                    簡易的なゲーム画面を作成しました。<br />
+                    線が引けるようになっており、攻撃用のオブジェクトは線の上を動くようになっています。<br />
+                    UIを作成して、SPや施設のゲージを視認できるようにしました。
                 </p>
                 <video controls playsinline muted src="common/videos/gameplay.mp4" class="text2-video"></video>
                 <p class="text2-inner">
                     <br />
-                    ～2024/9/30時点の進捗～<br />
+                    ・ボタンのUI用シェーダー<br />
                     <br />
-                    ・ゲーム画面やシステムを多く追加しました<br />
-                    <br />
-                    まず、基本的なシステムとして、プレイヤー自身がバッテリーを所持していて、<br />
-                    生産施設から供給されたエネルギーを貯蓄し、他の施設に供給できるようにしました。<br />
-                    充電ケーブルには自作したシェーダーを用いて、エネルギーの流れを表現しています。<br />
-                    攻撃などの施設のアクションは左下のパネル内のボタンで行えるようにし、施設の状態もそのパネルで確認できます。<br />
-                    <video controls playsinline muted src="common/videos/System20240930.mp4" class="text2-video"></video><br />
-                    <br />
-                    対戦前の準備画面を作成し、自由に施設の配置ができるようになりました。<br />
-                    これにより、対戦の戦略性がすこし増すと思います。<br />
-                    <video controls playsinline muted src="common/videos/Hensei20240930.mp4" class="text2-video"></video><br />
-                    <br />
-                    線を引くときのルールを追加しました。<br />
-                    線同士が近すぎる場合や、相手の陣地（ステージの半分から奥側）は<br />
-                    線が引けないようになっています。<br />
-                    また、右クリックで線を消せるようにしました。<br />
-                    <video controls playsinline muted src="common/videos/Line20240930.mp4" class="text2-video"></video><br />
-                </p>
-
-                <p class="text2-inner">
-                    <br />
-                    ～現在(2024/10/10)時点の進捗～<br />
-                    <br />
-                    ・ボタンのUI用のシェーダーを作成しました<br />
-                    <br />
-                    施設のアクション用のボタンに、使用可能な状態と、クールタイム時間を視覚的に表示するために、<br />
-                    ボタンのUI用のシェーダーを作成しました。<br />
-                    Polar coordinateを使ってクールタイム時の時計回りを再現したり、<br />
-                    この<a href="https://www.youtube.com/shorts/ujNYJ6kQfBo">動画</a>を参照して使用可能時にアウトラインに色を付けるようにしました。<br />
-                    <video controls playsinline muted src="common/videos/ButtonUIShader20241010.mp4" class="text2-video"></video><br />
-                    <br />
-                    ～今後の活動内容～<br />
-                    <br />
-                    現在は相方がオンライン対戦と同期の実装をしているので、<br />
-                    私はUIのデザイン、モデリング、BGMの作成をしていきます。
+                    施設のアクション用ボタンに、使用可能な状態とクールタイムを視覚的に表示するシェーダーを作成しました。<br />
+                    Polar coordinateを使ってクールタイム時の時計回りを再現し、使用可能時にアウトラインに色を付けるようにしました。
                 </p>
             </div>
         </section>

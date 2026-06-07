@@ -259,11 +259,40 @@ a.production-button {
 }
 /* 3つ目のボタンの背景色を変更 */
 .production-list li:nth-child(3) .production-button:before {
-    background: #C2ECFF;
+    background: #CCCCCC;
 }
 
 .production-list li:nth-child(3) .production-button:after {
-    background: #C2ECFF;
+    background: #CCCCCC;
+}
+
+/* 4つ目のボタンの背景色を変更 */
+.production-list li:nth-child(4) .production-button:before {
+    background: #F5C2FF;
+}
+
+.production-list li:nth-child(4) .production-button:after {
+    background: #F5C2FF;
+}
+
+/* 5つ目のボタンの背景色を変更 */
+.production-list li:nth-child(5) .production-button:before {
+    background: #C2D5FF;
+}
+
+.production-list li:nth-child(5) .production-button:after {
+    background: #C2D5FF;
+}
+
+/* 制作中止ボタン */
+a.cancelled-button {
+    background: #888;
+    color: #ddd;
+}
+
+/* 制作中ボタン */
+a.wip-button {
+    background: #555;
 }
 .comment {
     display: flex;
