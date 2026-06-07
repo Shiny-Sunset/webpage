@@ -1,0 +1,115 @@
+/* 記事ページ共通レイアウト（circleclicker / amida / mini-fantasy / vrchat / fingerguider） */
+
+.box-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10%;
+    padding-bottom: 4rem;
+}
+
+.box-inner .title {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.box-inner .title-square {
+    width: 1rem;
+    height: 5rem;
+    background: #DB33EE;
+    margin-right: 1rem;
+}
+
+.box-title {
+    font-size: 5rem;
+}
+
+a.play-button {
+    background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
+    width: 50rem;
+    height: 12rem;
+    position: absolute;
+    top: 2rem;
+    right: 20rem;
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+}
+
+a.play-button:hover {
+    background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
+}
+
+.wip-badge {
+    display: inline-block;
+    background: #555;
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.8rem 3rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+}
+
+.text-title {
+    font-size: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(transparent 90%, #FF8E8E 10%);
+    display: inline-block;
+}
+
+.text1-inner,
+.text2-inner {
+    font-size: 3rem;
+    line-height: 1.7;
+}
+
+.text2-video {
+    width: 60rem;
+    max-width: 100%;
+    margin: 1rem 0;
+    display: block;
+}
+
+/* ========== Responsive (≤ 768px) ========== */
+@media (max-width: 768px) {
+
+    .box-inner {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .box-title {
+        font-size: 3rem;
+    }
+
+    /* プレイボタンを絶対配置から通常フローに戻す */
+    a.play-button {
+        position: static;
+        width: 85vw;
+        height: auto;
+        padding: 2rem;
+        font-size: 3rem;
+        margin: 2rem 0;
+    }
+
+    .wip-badge {
+        font-size: 2rem;
+    }
+
+    .text-title {
+        font-size: 2.5rem;
+    }
+
+    .text1-inner,
+    .text2-inner {
+        font-size: 1.8rem;
+    }
+
+    .text2-video {
+        width: 85vw;
+    }
+}
