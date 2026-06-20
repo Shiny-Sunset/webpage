@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SunsetWebSite</title>
+    <title>FingerGuider | SunsetWebSite</title>
+    <meta name="description" content="マウスやカメラの人差し指で線を引いて3Dダンゴムシとインタラクションできるアプリ「FingerGuider」の紹介ページです。">
     <link rel="shortcut icon" href="common/images/favicon.ico">
     <link rel="apple-touch-icon" href="common/images/apple-touch-icon.png">
     <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
@@ -19,9 +20,8 @@
         <h1 class="site-logo"><a href="https://shiny-sunset.github.io/webpage/"><img src="common/images/logo.png" alt="Sunset's Web site"></a></h1>
         <nav class="header-nav">
             <ul class="header-nav-links">
-                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/error.html" class="btn nav-button"><span>日記</span></a></li>
                 <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/production.html" class="btn nav-button"><span>成果物</span></a></li>
-                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/error.html" class="btn nav-button"><span>雑談</span></a></li>
+                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/about.html" class="btn nav-button"><span>About</span></a></li>
             </ul>
         </nav><!-- /nav -->
     </header><!-- /header -->
@@ -40,7 +40,12 @@
                     ～作品紹介～
                 </div>
                 <p class="text1-inner">
-                    <!-- ここにFingerGuiderの概要・ゲーム内容・目的などを書いてください -->
+                    マウスやカメラに映した人差し指で線を引いて、画面上の3Dダンゴムシとインタラクションできるアプリです。<br />
+                    線が近づくとダンゴムシが逃げ出し、触れると丸まり、線が消えるとまた歩き出します。<br />
+                    ダンゴムシの数は1〜10匹まで調整でき、ダンゴムシ同士がぶつかると互いに避け合います。<br />
+                    <br />
+                    カメラを使った指モードでは、人差し指を立てると線が引かれ、<br />
+                    他のジェスチャー（グー・パーなど）に切り替えると線が止まります。
                 </p>
             </div>
 
@@ -49,17 +54,63 @@
                     ～制作の話～
                 </div>
                 <p class="text2-inner">
-                    <!-- ここにチーム構成、自分の担当、使用技術、進捗などを書いてください -->
-                </p>
-
-                <!-- 進捗更新はこのp要素をコピーして追記してください -->
-                <!-- 例:
-                <p class="text2-inner">
-                    ～YYYY/MM/DD時点の進捗～<br />
+                    大学の授業の課題として、<a href="https://github.com/Seia1004">Seia1004さん</a>と2人で開発しています。<br />
+                    技術スタックはVite + Vanilla JavaScript + Three.js + Canvas 2D APIで、<br />
+                    カメラによるジェスチャー認識にはMediaPipe Tasks Visionを使用しています。<br />
                     <br />
-                    ・〇〇を実装しました<br />
+                    私はアプリの企画・設計と、ダンゴムシの3Dモデル制作を担当しました。
                 </p>
-                -->
+                <img src="common/images/dangomushi.png" alt="ダンゴムシの3Dモデル" class="text2-video" />
+                <p class="text2-inner">
+                    現在はPhase 2（MediaPipe連携・3Dモデル化・複数匹対応・衝突回避）まで完了しており、<br />
+                    次のPhase 3ではダンゴムシをちびキャラモデルに置き換え、感情表現を追加する予定です。<br />
+                    <br />
+                    Phase 3に向けて、ちびキャラのモデリング・リギング・スキニング・テクスチャ作成・<br />
+                    アニメーション作成・シェイプキー作成まではすでに完了しています。<br />
+                    今後はプログラム側の実装にも着手していきたいと考えています。
+                </p>
+                <img src="common/images/dangomushi_girl_wink.png" alt="ちびキャラモデル（顔アップ）" class="text2-video" />
+                <img src="common/images/point_finger.png" alt="ちびキャラモデル（全身）" class="text2-video" />
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～今後の展望～
+                </div>
+                <p class="text2-inner">
+                    現在はチームメイトに大まかなプロトタイプを作ってもらった段階で、<br />
+                    ここから細部のこだわりを私が実装していく予定です。<br />
+                    <br />
+                    まず、ダンゴムシをちびキャラに切り替えられる機能を実装します。<br />
+                    次に、ダンゴムシの特徴である交替性転向反応のロジックを組み込み、<br />
+                    動きをよりリアルに近づけていきます。<br />
+                    また、餌やりなどインタラクションの種類も増やしたいと考えています。<br />
+                    <br />
+                    さらに、現在のメインである線を引くシミュレーション機能に加えて、<br />
+                    カメラを活用した新しい機能も計画中です。<br />
+                    教授にプロトタイプを見せたところ「カメラで人の顔にダンゴムシが寄ってくると面白い」<br />
+                    という話になり、それをきっかけに構想が広がりました。<br />
+                    <br />
+                    カメラで写真を撮るとちびキャラのカットイン演出が表示され、<br />
+                    人の顔にダンゴムシが寄ってきて、紙を食べるというダンゴムシの特徴を活かして<br />
+                    顔の部分だけを食べてしまう――そんな虫食いシミュレーションまで<br />
+                    作り上げることを目標にしています。<br />
+                    <br />
+                    虫食いが終わった後には、食べた穴からダンゴムシが顔をのぞかせたり、<br />
+                    画面の端でちびキャラがドヤ顔とピースで決めポーズをとる演出も予定しています。<br />
+                    完成した虫食い画像は自由にダウンロードできるようにして、<br />
+                    シミュレーションの結果をSNSなどでシェアして楽しめるようにしたいと考えています。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～リンク～
+                </div>
+                <p class="text2-inner">
+                    <a href="https://shiny-sunset.github.io/FingerGuider/">デモページはこちら</a><br />
+                    <a href="https://github.com/Shiny-Sunset/FingerGuider">GitHubリポジトリはこちら</a>
+                </p>
             </div>
         </section>
     </main><!-- /main -->
@@ -67,11 +118,10 @@
     <footer id="footer">
         <div class="footer-inner">
             <div class="footer-icon">
-                <img src="common/images/pityu_summer_circle.png" alt="Pityu_Summer" />
+                <img src="common/images/Electric.png" alt="Pityu_Summer" />
                 <nav class="footer-nav">
                     <ul class="footer-nav-links">
                         <li class="footer-nav-item"><a href="https://github.com/Shiny-Sunset" class="btn footer-nav-button"><span>Github</span></a></li>
-                        <li class="footer-nav-item"><a href="https://shiny-sunset.github.io/webpage/error.html" class="btn footer-nav-button"><span>Youtube</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -82,9 +132,9 @@
                     <p class="footer-self-introduction-role">運営者</p>
                 </div>
                 <p class="footer-self-introduction-name">Sunset</p>
-                <p class="footer-self-introduction-university">東京電機大学在学</p>
+                <p class="footer-self-introduction-university">東京電機大学大学院在学</p>
                 <p class="footer-self-introduction-comment">
-                    こんにちは！Sunsetです。大学生です。<br />
+                    こんにちは！Sunsetです。大学院生です。<br />
                     ゲームが大好きで将来はゲームプログラマー目指してます。
                 </p>
             </div>

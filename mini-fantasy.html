@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SunsetWebSite</title>
+    <title>Mini-Fantasy | SunsetWebSite</title>
+    <meta name="description" content="Unityで制作したブラウザでプレイできる3DアクションRPG「Mini-Fantasy」の紹介ページです。">
     <link rel="shortcut icon" href="common/images/favicon.ico">
     <link rel="apple-touch-icon" href="common/images/apple-touch-icon.png">
     <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
@@ -19,9 +20,8 @@
         <h1 class="site-logo"><a href="https://shiny-sunset.github.io/webpage/"><img src="common/images/logo.png" alt="Sunset's Web site"></a></h1>
         <nav class="header-nav">
             <ul class="header-nav-links">
-                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/error.html" class="btn nav-button"><span>日記</span></a></li>
                 <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/production.html" class="btn nav-button"><span>成果物</span></a></li>
-                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/error.html" class="btn nav-button"><span>雑談</span></a></li>
+                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/about.html" class="btn nav-button"><span>About</span></a></li>
             </ul>
         </nav><!-- /nav -->
     </header><!-- /header -->
@@ -57,7 +57,42 @@
                     ～制作の話～
                 </div>
                 <p class="text2-inner">
-                    <!-- ここに制作の経緯や苦労した点、学んだことなどを書いてください -->
+                    大学の授業の課題として約1ヶ月で制作しました。<br />
+                    もともとゲームが好きで、自分の手でアクションRPGを作ってみたいという思いがあり、<br />
+                    授業の課題をきっかけに本格的に取り組みました。<br />
+                    <br />
+                    3Dモデルはすべて自作で、WebGLで動かすことを前提にローポリで制作しています。<br />
+                    モデリング・リギング・スキニング・テクスチャ作成・アニメーション作成まで、<br />
+                    すべての工程を一人で担当しました。
+                </p>
+                <img src="common/images/mini-fantasy_models.png" alt="Mini-Fantasyの3Dモデル" class="text2-video" />
+                <p class="text2-inner">
+                    プログラム面では、敵AIの実装に特に苦労しました。<br />
+                    NavMeshを使った索敵・追跡・巡回の状態遷移を組み、<br />
+                    剣士・銃士・ボスの3種類それぞれに異なる行動パターンを持たせています。<br />
+                    ボス戦ではプレイヤーとの距離に応じて近距離攻撃と遠距離攻撃を切り替える仕組みにしました。<br />
+                    <br />
+                    ロックオンシステムもこだわったポイントです。<br />
+                    Tabキーで近くの敵を順番にロックオンでき、<br />
+                    Cinemachineと連携して専用カメラに切り替わるようにしています。<br />
+                    <br />
+                    WebGLビルド自体はUnityの機能で行えましたが、<br />
+                    VFX Graphを使って魔法の弾の残像エフェクトや、必殺技で雷を無数に呼び出す演出まで作り込んだものの、<br />
+                    実際にWebGLでビルドするまでVFX Graphが対応していないことに気づかず、<br />
+                    最終的にそれらが反映できず、見た目は少し質素な仕上がりになってしまいました。
+                </p>
+                <video controls playsinline muted src="common/videos/mini-fantasy_VFX.mp4" class="text2-video"></video>
+                <p class="text2-inner">
+                    効果音の制作は<a href="https://github.com/Seia1004">Seia1004さん</a>に協力していただきました。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～リンク～
+                </div>
+                <p class="text2-inner">
+                    <a href="https://github.com/Shiny-Sunset/Mini-Fantasy">GitHubリポジトリはこちら</a>
                 </p>
             </div>
         </section>
@@ -66,11 +101,10 @@
     <footer id="footer">
         <div class="footer-inner">
             <div class="footer-icon">
-                <img src="common/images/pityu_summer_circle.png" alt="Pityu_Summer" />
+                <img src="common/images/Electric.png" alt="Pityu_Summer" />
                 <nav class="footer-nav">
                     <ul class="footer-nav-links">
                         <li class="footer-nav-item"><a href="https://github.com/Shiny-Sunset" class="btn footer-nav-button"><span>Github</span></a></li>
-                        <li class="footer-nav-item"><a href="https://shiny-sunset.github.io/webpage/error.html" class="btn footer-nav-button"><span>Youtube</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -81,10 +115,10 @@
                     <p class="footer-self-introduction-role">運営者</p>
                 </div>
                 <p class="footer-self-introduction-name">Sunset</p>
-                <p class="footer-self-introduction-university">東京電機大学在学</p>
+                <p class="footer-self-introduction-university">東京電機大学大学院在学</p>
                 <p class="footer-self-introduction-comment">
-                    こんにちは！Sunsetです。大学生です。<br />
-                    ゲームが大好きで将来はゲームプログラマー目指してます。
+                    こんにちは！Sunsetです。大学院生です。<br />
+                    将来はゲームプログラマー目指してます。
                 </p>
             </div>
         </div>

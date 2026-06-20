@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoidFishAquarium | SunsetWebSite</title>
+    <meta name="description" content="Boids Algorithmを用いた魚群シミュレーションアプリ「BoidFishAquarium」の紹介ページです。">
+    <link rel="shortcut icon" href="common/images/favicon.ico">
+    <link rel="apple-touch-icon" href="common/images/apple-touch-icon.png">
+    <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="common/css/style_common.css">
+    <link rel="stylesheet" href="common/css/style_article.css">
+    <link rel="stylesheet" href="common/css/style_boidfishaquarium.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <h1 class="site-logo"><a href="https://shiny-sunset.github.io/webpage/"><img src="common/images/logo.png" alt="Sunset's Web site"></a></h1>
+        <nav class="header-nav">
+            <ul class="header-nav-links">
+                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/production.html" class="btn nav-button"><span>成果物</span></a></li>
+                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/about.html" class="btn nav-button"><span>About</span></a></li>
+            </ul>
+        </nav><!-- /nav -->
+    </header><!-- /header -->
+
+    <main id="main">
+        <section class="box-inner">
+            <div class="title">
+                <div class="title-square"></div>
+                <h2 class="box-title">BoidFishAquarium</h2>
+            </div>
+
+            <a href="https://shiny-sunset.github.io/BoidFishAquarium/" class="btn play-button"><span>Playはコチラ</span></a>
+
+            <div class="text1">
+                <div class="text-title">
+                    ～作品紹介～
+                </div>
+                <p class="text1-inner">
+                    Boids Algorithmを用いた魚群シミュレーションアプリです。<br />
+                    水槽の中を泳ぐ魚の群れをリアルタイムで観察できます。<br />
+                    <br />
+                    準備フェーズでは魚の数をスライダーで調整したり、水槽内に障害物を配置できます。<br />
+                    シミュレーション中は餌を与えたり、魚を驚かしたりしてインタラクションが楽しめます。<br />
+                    Tabキーで潜水モードに切り替えると、水槽の中に潜って魚を間近で観察できます。<br />
+                    <br />
+                    【操作方法】<br />
+                    ＜準備フェーズ＞<br />
+                    スライダー：魚の数調整　／　障害物配置　／　A・D：カメラ回転　／　Start：開始<br />
+                    ＜シミュレーション＞<br />
+                    F：餌やり　／　G：驚かす　／　A・D：カメラ回転　／　Tab：潜水モード　／　Backspace：リセット<br />
+                    ＜潜水モード＞<br />
+                    WASD：移動　／　マウス：視点操作　／　F：餌を射出　／　G：障害物を射出　／　Tab：戻る
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～制作の話～
+                </div>
+                <p class="text2-inner">
+                    大学の授業の課題として制作しました。<br />
+                    <br />
+                    Boids Algorithmの分離（Separation）・整列（Alignment）・結合（Cohesion）の<br />
+                    3つのルールを実装し、魚の群れが自然に泳ぐ動きを再現しています。<br />
+                    パラメータのバランス調整にこだわり、リアルな群れの挙動を目指しました。<br />
+                    <br />
+                    魚の3Dモデルも自作しており、水槽内の見た目にもこだわっています。<br />
+                    潜水モードでは水槽の中に入って魚を間近で観察でき、<br />
+                    餌やりや驚かしなど、さまざまなインタラクションを楽しめるようにしました。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～リンク～
+                </div>
+                <p class="text2-inner">
+                    <a href="https://github.com/Shiny-Sunset/BoidFishAquarium">GitHubリポジトリはこちら</a>
+                </p>
+            </div>
+        </section>
+    </main><!-- /main -->
+
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-icon">
+                <img src="common/images/Electric.png" alt="Pityu_Summer" />
+                <nav class="footer-nav">
+                    <ul class="footer-nav-links">
+                        <li class="footer-nav-item"><a href="https://github.com/Shiny-Sunset" class="btn footer-nav-button"><span>Github</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-text">
+                <div class="role">
+                    <div class="role-square"></div>
+                    <p class="footer-self-introduction-role">運営者</p>
+                </div>
+                <p class="footer-self-introduction-name">Sunset</p>
+                <p class="footer-self-introduction-university">東京電機大学大学院在学</p>
+                <p class="footer-self-introduction-comment">
+                    こんにちは！Sunsetです。大学院生です。<br />
+                    将来はゲームプログラマー目指してます。
+                </p>
+            </div>
+        </div>
+    </footer><!-- /footer -->
+</body>
+</html>
