@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +18,14 @@
 <body>
 
     <header id="header">
-        <h1 class="site-logo"><a href="https://shiny-sunset.github.io/webpage/"><img src="common/images/logo.png" alt="Sunset's Web site"></a></h1>
+        <h1 class="site-logo"><a href="https://shiny-sunset.github.io/webpage/"><img src="common/images/logo.png"
+                    alt="Sunset's Web site"></a></h1>
         <nav class="header-nav">
             <ul class="header-nav-links">
-                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/production.html" class="btn nav-button"><span>成果物</span></a></li>
-                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/about.html" class="btn nav-button"><span>About</span></a></li>
+                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/production.html"
+                        class="btn nav-button"><span>成果物</span></a></li>
+                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/about.html"
+                        class="btn nav-button"><span>About</span></a></li>
             </ul>
         </nav><!-- /nav -->
     </header><!-- /header -->
@@ -33,7 +37,8 @@
                 <h2 class="box-title">FingerGuider</h2>
             </div>
 
-            <p class="wip-badge">鋭意制作中!! (チーム開発)</p>
+
+            <a href="https://shiny-sunset.github.io/FingerGuider/" class="btn play-button"><span>Playはコチラ</span></a>
 
             <div class="text1">
                 <div class="text-title">
@@ -62,12 +67,11 @@
                 </p>
                 <img src="common/images/dangomushi.png" alt="ダンゴムシの3Dモデル" class="text2-video" />
                 <p class="text2-inner">
-                    現在はPhase 2（MediaPipe連携・3Dモデル化・複数匹対応・衝突回避）まで完了しており、<br />
-                    次のPhase 3ではダンゴムシをちびキャラモデルに置き換え、感情表現を追加する予定です。<br />
-                    <br />
-                    Phase 3に向けて、ちびキャラのモデリング・リギング・スキニング・テクスチャ作成・<br />
-                    アニメーション作成・シェイプキー作成まではすでに完了しています。<br />
-                    今後はプログラム側の実装にも着手していきたいと考えています。
+                    ダンゴムシに加えて、ちびキャラモデルの制作も担当しました。<br />
+                    モデリング・リギング・スキニング・テクスチャ作成・<br />
+                    アニメーション作成・シェイプキー作成まで手がけていて、<br />
+                    ちびキャラは歩行・走り・丸まりのアニメーションや、<br />
+                    シェイプキーによる表情の変化（丸まると困った顔、食事中は笑顔など）にも対応しています。
                 </p>
                 <img src="common/images/dangomushi_girl_wink.png" alt="ちびキャラモデル（顔アップ）" class="text2-video" />
                 <img src="common/images/point_finger.png" alt="ちびキャラモデル（全身）" class="text2-video" />
@@ -75,31 +79,181 @@
 
             <div class="text2">
                 <div class="text-title">
-                    ～今後の展望～
+                    ～できること～
                 </div>
                 <p class="text2-inner">
-                    現在はチームメイトに大まかなプロトタイプを作ってもらった段階で、<br />
-                    ここから細部のこだわりを私が実装していく予定です。<br />
+                    画面右上のボタンで、いろいろな操作を切り替えられます。<br />
                     <br />
-                    まず、ダンゴムシをちびキャラに切り替えられる機能を実装します。<br />
-                    次に、ダンゴムシの特徴である交替性転向反応のロジックを組み込み、<br />
-                    動きをよりリアルに近づけていきます。<br />
-                    また、餌やりなどインタラクションの種類も増やしたいと考えています。<br />
+                    ・🖱 マウスモード／☝ 指モードの切り替え<br />
+                    ・ダンゴムシの数を1〜10匹で増減<br />
+                    ・3Dモデルを「ダンゴムシ」と「ちびキャラ」で切り替え<br />
                     <br />
-                    さらに、現在のメインである線を引くシミュレーション機能に加えて、<br />
-                    カメラを活用した新しい機能も計画中です。<br />
-                    教授にプロトタイプを見せたところ「カメラで人の顔にダンゴムシが寄ってくると面白い」<br />
-                    という話になり、それをきっかけに構想が広がりました。<br />
+                    画面右下の小窓には、カーソルが最後に触れた個体を間近で表示します。<br />
+                    小窓の上でマウスホイールを回すと拡大・縮小でき、<br />
+                    対象の個体にはオレンジ色のリングが表示されます。<br />
                     <br />
-                    カメラで写真を撮るとちびキャラのカットイン演出が表示され、<br />
-                    人の顔にダンゴムシが寄ってきて、紙を食べるというダンゴムシの特徴を活かして<br />
-                    顔の部分だけを食べてしまう――そんな虫食いシミュレーションまで<br />
-                    作り上げることを目標にしています。<br />
+                    餌やりもできます。マウスなら右クリック、<br />
+                    指モードなら✌️ピースのジェスチャーで、指先に餌を1個置けます。<br />
+                    餌を置くと近くのダンゴムシが寄ってきて食べますが、<br />
+                    線で追われているときは餌より逃げを優先します。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～ダンゴムシの動き～
+                </div>
+                <p class="text2-inner">
+                    このアプリでは、ダンゴムシの「交替性転向反応」を再現しています。<br />
+                    交替性転向反応とは、ダンゴムシが障害物にぶつかって片方へ曲がると、<br />
+                    次は逆方向へ曲がるという、実際のダンゴムシがもつ習性のことです。<br />
                     <br />
-                    虫食いが終わった後には、食べた穴からダンゴムシが顔をのぞかせたり、<br />
-                    画面の端でちびキャラがドヤ顔とピースで決めポーズをとる演出も予定しています。<br />
-                    完成した虫食い画像は自由にダウンロードできるようにして、<br />
-                    シミュレーションの結果をSNSなどでシェアして楽しめるようにしたいと考えています。
+                    このアプリでは「線」を障害物に見立てて再現していて、<br />
+                    ダンゴムシは線に触れるたびに左右交互で線沿いに逃げ、<br />
+                    ジグザグに回り込みながら遠ざかっていきます。<br />
+                    <br />
+                    線に接触するとダンゴムシは丸まり、線が消えると伸びてまた歩き出します。<br />
+                    ダンゴムシ同士が近づくとお互いに反発して避け合うので、<br />
+                    数を増やしても自然に散らばって動きます。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～虫食いモード～
+                </div>
+                <p class="text2-inner">
+                    タイトル画面からは「虫食いモード」も起動できます。<br />
+                    カメラ映像を全画面に流し、顔検知と写真加工で遊ぶモードです。<br />
+                    <br />
+                    まずライブ画面で、カメラに映った人の顔にダンゴムシが群がってきます<br />
+                    （MediaPipeのFaceDetectorで顔を検知しています）。<br />
+                    📷ボタンを押すと群がっていたダンゴムシが消えて静止画をキャプチャし、<br />
+                    今度は顔の上に敷いた「見えない餌」にダンゴムシが集まって、<br />
+                    紙を食べるように顔全体へ穴を空けていきます。<br />
+                    <br />
+                    完成は時間ではなく「餌を食べ終えた割合」で判定していて、<br />
+                    食べ終えるとちびキャラがドヤ顔＋ピースで写真に合成されます。<br />
+                    できあがった虫食い写真は透過PNGでダウンロードすることが可能です。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～描画スタイル（トゥーン＋ドット）～
+                </div>
+                <p class="text2-inner">
+                    見た目には、セル調のトゥーンシェーダーとピクセル化シェーダーをかけています。<br />
+                    <br />
+                    3Dモデルは3段階の階調で塗るトゥーン調にし、<br />
+                    ピクセル化は3D・2D（背景／線／餌／写真／穴）・カメラ映像のすべてに<br />
+                    同じグリッドで適用しているので、合成結果が均一なドット絵になります。<br />
+                    ワールド座標は原寸のままなので、当たり判定や配置はドット化の有無で変わりません。<br />
+                    <br />
+                    トゥーンのON/OFFやドットの粗さは設定ファイルの定数ひとつで切り替えられるようにしています。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～技術のしくみ～
+                </div>
+                <p class="text2-inner">
+                    全体はVite＋Vanilla JavaScript（ES Modules）で組み立てています。<br />
+                    <br />
+                    ・背景／線／手のスケルトン描画：Canvas 2D API<br />
+                    ・3Dモデルの描画・トゥーンシェーダー・ピクセル化：Three.js<br />
+                    ・ジェスチャー認識・手のランドマーク検出・顔検知：MediaPipe Tasks Vision<br />
+                    <br />
+                    ダンゴムシ1匹1匹はステートマシンとして実装していて、<br />
+                    「歩く／逃げる／丸まる／餌を食べる／顔に誘引される」といった状態を切り替えながら動きます。<br />
+                    餌やちびキャラのサイズ、虫食い穴の大きさなどの調整値は定数にまとめてあり、<br />
+                    数値を変えるだけで挙動を調整できるようにしています。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～プログラムの組み立て方～
+                </div>
+                <p class="text2-inner">
+                    ここからは中身のプログラムの話です。<br />
+                    このアプリは、画面を2つの層に分けて描いています。<br />
+                    <br />
+                    ・下の層（Canvas 2D）：背景・線・餌・手のスケルトン<br />
+                    ・上の層（WebGL / Three.js）：3Dモデルだけ<br />
+                    <br />
+                    透明なWebGLキャンバスを2Dキャンバスの上に重ねることで、<br />
+                    「軽くて自由に描ける2D」と「立体的な3Dモデル」を実現しています。<br />
+                    <br />
+                    さらに、ダンゴムシ1匹の「動きの計算」と「見た目の描画」を<br />
+                    きっちり分けているのがこだわりです。<br />
+                    計算する側は座標・角度・状態を出すだけで、絵は一切描きません。<br />
+                    描画する側はその座標を受け取って表示するだけになっているので、<br />
+                    ダンゴムシとちびキャラのモデル切り替えが容易になっています。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～ダンゴムシの動きの細かい話～
+                </div>
+                <p class="text2-inner">
+                    ダンゴムシ1匹1匹は、毎フレーム「どっちに進むか」を自分で決めています。<br />
+                    考え方はいくつかの「力」を足し合わせる方式です。<br />
+                    <br />
+                    ・線から逃げる力（線に対して垂直方向＋沿う方向）<br />
+                    ・仲間とぶつからないように反発する力<br />
+                    ・餌に近づく力<br />
+                    ・（虫食いモードでは）顔に引き寄せられる力<br />
+                    <br />
+                    これらを重み付きで合成して、向きを少しずつ滑らかに変えていきます。<br />
+                    大事なのは「優先度」で、線に追われているときは餌も顔も無視して<br />
+                    逃げを最優先にするので、行動が破綻せず自然に見えます。<br />
+                    <br />
+                    こだわりの交替性転向反応は、線から離れる方向の力に加えて<br />
+                    「線に沿う方向」の力を足し、その左右を線に触れるたびに反転させることで<br />
+                    再現しています。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～虫食いモードのプログラム～
+                </div>
+                <p class="text2-inner">
+                    虫食いモードで難しかったのは、顔の「中央だけ」食べて<br />
+                    終わってしまわないようにすることでした。<br />
+                    <br />
+                    そこで撮影した瞬間に、顔の楕円の内側へ<br />
+                    「見えない餌」を格子状にびっしり敷き詰めています。<br />
+                    ダンゴムシはまだ食べていない餌へ向かい、近くの餌から食べ進むので、<br />
+                    顔全体がまんべんなく虫食いになっていきます。<br />
+                    <br />
+                    完成の判定は時間ではなく「餌を食べ終えた割合」で見ていて、<br />
+                    画面からはみ出す餌は置かない（食べに行けず完成が止まるため）など、<br />
+                    細かい抜け漏れも詰めました。<br />
+                    <br />
+                    穴の大きさは顔の大小に関係なく一定にしていて、<br />
+                    顔が大きいときは穴の数が増えて覆う、という考え方にしています。<br />
+                    穴あけ自体は描画の合成モードで「くり抜く」ように処理し、<br />
+                    最後は透過PNGとして書き出しています。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～ふりかえり～
+                </div>
+                <p class="text2-inner">
+                    大学の授業の課題として始めたプロジェクトですが、<br />
+                    最初のプロトタイプから少しずつ細部を作り込んで、<br />
+                    ちびキャラへの切り替え、交替性転向反応、餌やり、<br />
+                    そしてカメラを使った虫食いモードまで実装できました。<br />
+                    <br />
+                    「カメラで人の顔にダンゴムシが寄ってくると面白いね」という<br />
+                    教授との雑談からふくらんだアイデアを、<br />
+                    実際に動くところまで形にできたのが自分としては嬉しいポイントです。
                 </p>
             </div>
 
@@ -108,7 +262,6 @@
                     ～リンク～
                 </div>
                 <p class="text2-inner">
-                    <a href="https://shiny-sunset.github.io/FingerGuider/">デモページはこちら</a><br />
                     <a href="https://github.com/Shiny-Sunset/FingerGuider">GitHubリポジトリはこちら</a>
                 </p>
             </div>
@@ -121,7 +274,8 @@
                 <img src="common/images/Electric.png" alt="Pityu_Summer" />
                 <nav class="footer-nav">
                     <ul class="footer-nav-links">
-                        <li class="footer-nav-item"><a href="https://github.com/Shiny-Sunset" class="btn footer-nav-button"><span>Github</span></a></li>
+                        <li class="footer-nav-item"><a href="https://github.com/Shiny-Sunset"
+                                class="btn footer-nav-button"><span>Github</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -141,4 +295,5 @@
         </div>
     </footer><!-- /footer -->
 </body>
+
 </html>

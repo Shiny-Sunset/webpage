@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +18,14 @@
 <body>
 
     <header id="header">
-        <h1 class="site-logo"><a href="https://shiny-sunset.github.io/webpage/"><img src="common/images/logo.png" alt="Sunset's Web site"></a></h1>
+        <h1 class="site-logo"><a href="https://shiny-sunset.github.io/webpage/"><img src="common/images/logo.png"
+                    alt="Sunset's Web site"></a></h1>
         <nav class="header-nav">
             <ul class="header-nav-links">
-                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/production.html" class="btn nav-button"><span>成果物</span></a></li>
-                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/about.html" class="btn nav-button"><span>About</span></a></li>
+                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/production.html"
+                        class="btn nav-button"><span>成果物</span></a></li>
+                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/about.html"
+                        class="btn nav-button"><span>About</span></a></li>
             </ul>
         </nav><!-- /nav -->
     </header><!-- /header -->
@@ -67,12 +71,30 @@
 
             <div class="text2">
                 <div class="text-title">
+                    ～最近勉強していること～
+                </div>
+                <p class="text2-inner">
+                    ゲームプログラマーを目指すために、<br />
+                    ベクトル、行列、クォータニオンなどの勉強を行っています。<br />
+                    さらに実際にVector3クラスなどの作成をして理解を深めています。<br />
+                    <br />
+                    また、DirectX 12を使って描画処理に挑戦しています。<br />
+                    <br />
+                    ↓使用している書籍は以下<br />
+                    <a href="https://www.oreilly.co.jp/books/9784873113777/">実例で学ぶゲーム3D数学</a><br />
+                    <a href="https://www.shoeisha.co.jp/book/detail/9784798161938">DirectX 12の魔導書
+                        3Dレンダリングの基礎からMMDモデルを踊らせるまで</a>
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
                     ～競技プログラミング～
                 </div>
                 <p class="text2-inner">
                     趣味で競技プログラミング（AtCoder）に取り組んでいます。<br />
-                    2026年4月頃から始めて、現在のレーティングは376です。<br />
-                    茶色（400）までもう少しのところまで来ています。
+                    2026年4月頃から始めて、現在のレーティングは430です。<br />
+                    緑色（800）を目指して勉強しています。
                 </p>
             </div>
 
@@ -88,6 +110,26 @@
                     <br />
                     「動けばいい」ではなく、細部の挙動やリアリティまで追求することで、<br />
                     触っていて楽しいと思えるものを目指しています。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～研究テーマについて～
+                </div>
+                <p class="text2-inner">
+                    【研究テーマ】<br />
+                    「指先変色表現による擬似触覚生成手法」<br />
+                    <br />
+                    【研究詳細】<br />
+                    近年、VR等の分野において「触覚」の再現が重要視されていますが、専用の物理デバイスは高価で装着の負担が大きいという課題があります。<br />
+                    そこで私は、人間の視覚的な錯覚を利用して触力を代替する「擬似触覚（Pseudo-haptics）」に着目し、世界観や没入感を損なわない自然なフィードバック手法の研究を行っています。<br />
+                    具体的には、人が物体を強く押した際に血流が変化して「指先が白くなる」という生理現象を、ゲームエンジン（Unity）上でリアルタイムに再現するシステムを開発しました。<br />
+                    データ駆動モデルを基に、主成分分析（PCA）やRBF補間を用いて変色パターンの合成係数を計算し、カスタムシェーダーによってGPU上で高速に描画する仕組みを実装しています。<br />
+                    本システムを用いてVR空間内で被験者実験を行った結果、約90%のユーザーが「力加減が分かりやすい」と評価し、硬さの識別タスクでも約89%の高い正答率を記録しました。<br />
+                    これにより、大掛かりな装置を使わずとも、視覚表現のみで効果的な力覚フィードバックを提示できることを実証しました。<br />
+                    大学院ではこの成果を発展させ、透明なオブジェクトに接触した際の、指の腹の変色表現に取り組みます。<br />
+                    ロードセルとカメラを同期させた独自のデータ収集環境をゼロから構築し、より高精度で個人差にも適応できる次世代のインターフェース技術の確立を目指しています。<br />
                 </p>
             </div>
 
@@ -119,7 +161,8 @@
                 <img src="common/images/Electric.png" alt="Pityu_Summer" />
                 <nav class="footer-nav">
                     <ul class="footer-nav-links">
-                        <li class="footer-nav-item"><a href="https://github.com/Shiny-Sunset" class="btn footer-nav-button"><span>Github</span></a></li>
+                        <li class="footer-nav-item"><a href="https://github.com/Shiny-Sunset"
+                                class="btn footer-nav-button"><span>Github</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -139,4 +182,5 @@
         </div>
     </footer><!-- /footer -->
 </body>
+
 </html>
