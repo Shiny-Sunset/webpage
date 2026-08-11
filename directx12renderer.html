@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DirectX12Renderer | SunsetWebSite</title>
+    <meta name="description" content="DirectX 12を1から積み上げて制作している自作レンダラー「DirectX12Renderer」の紹介ページです。PMDモデルの描画からVMDモーション再生までを実装しています。">
+    <link rel="shortcut icon" href="common/images/favicon.ico">
+    <link rel="apple-touch-icon" href="common/images/apple-touch-icon.png">
+    <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="common/css/style_common.css">
+    <link rel="stylesheet" href="common/css/style_article.css">
+    <link rel="stylesheet" href="common/css/style_directx12renderer.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <h1 class="site-logo"><a href="https://shiny-sunset.github.io/webpage/"><img src="common/images/logo.png"
+                    alt="Sunset's Web site"></a></h1>
+        <nav class="header-nav">
+            <ul class="header-nav-links">
+                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/production.html"
+                        class="btn nav-button"><span>成果物</span></a></li>
+                <li class="header-nav-item"><a href="https://shiny-sunset.github.io/webpage/about.html"
+                        class="btn nav-button"><span>About</span></a></li>
+            </ul>
+        </nav><!-- /nav -->
+    </header><!-- /header -->
+
+    <main id="main">
+        <section class="box-inner">
+            <div class="title">
+                <div class="title-square"></div>
+                <h2 class="box-title">DirectX12Renderer</h2>
+            </div>
+
+            <p class="wip-badge">鋭意制作中!!</p>
+
+            <div class="text1">
+                <div class="text-title">
+                    ～作品紹介～
+                </div>
+                <p class="text1-inner">
+                    DirectX 12の学習のために、ゲームエンジンを使わず1から書いている自作レンダラーです。<br />
+                    ウィンドウを出すところから始めて、画面のクリア、三角形・四角形の描画、テクスチャ、<br />
+                    3Dモデルの読み込みと、順番に積み上げてきました。<br />
+                    <br />
+                    現在はPMD形式の3Dモデルを読み込んで、トゥーンシェーディングやスフィアマップを効かせつつ、<br />
+                    VMDファイルのモーションに合わせて踊らせるところまで動いています。<br />
+                    最終的な目標は、自分がBlenderで作ったモデル（glTF形式）を<br />
+                    このレンダラーで表示させることです。<br />
+                    <br />
+                    言語はC++20、ライブラリはDirectX 12（Direct3D 12 / DXGI / DirectXMath）と、<br />
+                    テクスチャ読み込み用のDirectXTexのみを使用しています。
+                </p>
+                <img src="common/images/DX12_miku.png" alt="DirectX12Rendererで描画したPMDモデル" class="text2-video" />
+                <p class="text1-inner">
+                    ▲ PMDモデルを読み込み、VMDファイルのモーションを再生している様子。<br />
+                    トゥーンシェーディングによる段階的な陰影と、ボーンによるスキニングが効いています。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～実装したこと～
+                </div>
+                <p class="text2-inner">
+                    ここまでに実装した内容です。<br />
+                    <br />
+                    ・ウィンドウの生成とDirect3D 12デバイスの初期化<br />
+                    ・コマンドリスト／コマンドキュー／スワップチェーンによる画面クリア<br />
+                    ・リソースバリアによる状態遷移<br />
+                    ・頂点バッファ・インデックスバッファを用いたポリゴンの描画<br />
+                    ・ルートシグネチャ／ディスクリプタヒープ／シェーダーリソースビューによるテクスチャ貼り付け<br />
+                    ・画像ファイルの読み込み（DirectXTex）<br />
+                    ・定数バッファと行列による座標変換（ワールド・ビュー・プロジェクション）<br />
+                    ・深度バッファ<br />
+                    ・PMDモデルの読み込みとマテリアルごとの描画<br />
+                    ・トゥーンシェーディング／スフィアマップ（乗算・加算）／スペキュラ<br />
+                    ・ボーンによるスキニング<br />
+                    ・VMDファイルの読み込みとキーフレームアニメーションの再生<br />
+                    <br />
+                    現在取り組んでいるのは、glTF（.glb）モデルの読み込みと描画です。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～プログラムの構成～
+                </div>
+                <p class="text2-inner">
+                    最初はすべてmain関数に書いていましたが、行数が増えて読みづらくなってきたので、<br />
+                    役割ごとにクラスへ切り出しました。<br />
+                    現在は次の4つで構成しています。<br />
+                    <br />
+                    ・Application：ウィンドウの生成とメッセージループ。全体の進行役<br />
+                    ・Dx12Wrapper：デバイス、スワップチェーン、コマンド関連、レンダーターゲット、<br />
+                    　深度バッファ、シーン共通の定数バッファ、テクスチャ生成といったDirectX 12の基盤部分<br />
+                    ・PMDRenderer：ルートシグネチャ、シェーダー、パイプラインステートといった「描き方」<br />
+                    ・PMDActor：頂点・インデックス・マテリアル・ボーンといった「描かれるデータ」<br />
+                    <br />
+                    特に意識したのが、PMDRenderer（描き方）とPMDActor（データ）を分けることです。<br />
+                    パイプラインはモデル間で共通なので1回設定すれば済みますが、<br />
+                    頂点バッファやマテリアルはモデルごとに違います。<br />
+                    ここを分けておくと、後からモデルを複数体出すときにパイプラインを使い回せます。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～描画パイプラインの話～
+                </div>
+                <p class="text2-inner">
+                    DirectX 12はDirectX 11と違って、GPUに渡すリソースの置き場所を<br />
+                    自分で設計しないといけないのが最初の壁でした。<br />
+                    <br />
+                    このレンダラーでは、シェーダーに渡すものを次のように割り当てています。<br />
+                    <br />
+                    ・b0：シーン共通の行列（ワールド・ビュー・プロジェクション・視点座標）<br />
+                    ・b1：ボーン行列（256本ぶん）<br />
+                    ・b2：マテリアル（ディフューズ・スペキュラ・アンビエント）<br />
+                    ・t0〜t3：通常テクスチャ／乗算スフィアマップ／加算スフィアマップ／トゥーンテクスチャ<br />
+                    ・s0・s1：通常用サンプラーとトゥーン用サンプラー<br />
+                    <br />
+                    b0とb1はシーン中で1つずつですが、b2とt0〜t3はマテリアルの数だけ必要になります。<br />
+                    そこでディスクリプタヒープには「CBV1つ＋SRV4つ」を1セットとして<br />
+                    マテリアルの数だけ並べ、描画時はインデックスバッファのオフセットと<br />
+                    ディスクリプタの位置を同時にずらしながらマテリアル単位で描いています。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～シェーダーの話～
+                </div>
+                <p class="text2-inner">
+                    頂点シェーダーとピクセルシェーダーはHLSLで書いています。<br />
+                    <br />
+                    ピクセルシェーダーでは、ライトと法線の内積をそのまま明るさにするのではなく、<br />
+                    その値をトゥーンテクスチャのUVとして使って色を引いています。<br />
+                    こうすると明暗が段階的に切り替わり、アニメ調の陰影になります。<br />
+                    <br />
+                    スフィアマップは、ビュー空間の法線のxyをそのままUVに変換して参照しています。<br />
+                    カメラから見た向きで模様が決まるので、金属やツヤの表現に使われる仕組みです。<br />
+                    乗算スフィアマップは色に掛け、加算スフィアマップは足す、という違いがあり、<br />
+                    加算のほうはアルファに影響させないようにしています。<br />
+                    <br />
+                    地味にハマったのが、ビュー空間の法線をピクセルシェーダー側で<br />
+                    正規化し直す必要があったことです。<br />
+                    頂点シェーダーからピクセルシェーダーへ渡される値は頂点間で補間されるため、<br />
+                    法線の長さが1から崩れてしまい、そのまま使うとスフィアマップがずれて見えました。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～スキニングとアニメーション～
+                </div>
+                <p class="text2-inner">
+                    PMDモデルの頂点は、それぞれ「どのボーンにどれくらい影響されるか」の情報を持っています。<br />
+                    このレンダラーでは頂点シェーダー側で2本のボーン行列をウェイトで混ぜ合わせ、<br />
+                    頂点をボーンに追従させています。<br />
+                    <br />
+                    ボーンは親子関係を持つツリー構造になっているので、<br />
+                    親の変換行列を再帰的に子へ掛け合わせていくことで全身のポーズが決まります。<br />
+                    ここは書籍を読むだけだとイメージしづらく、<br />
+                    実際に腕のボーンだけを回して動かしてみて、ようやく腑に落ちた部分です。<br />
+                    <br />
+                    アニメーションはVMDファイルから読み込んでいます。<br />
+                    VMDにはボーンごとのキーフレーム（フレーム番号と回転クォータニオン）が入っているので、<br />
+                    現在フレームを挟む2つのキーフレームを探し、その間をクォータニオンの球面線形補間でつなぎます。<br />
+                    <br />
+                    さらにVMDはキーフレームごとにベジェ曲線の補間パラメーターを持っているため、<br />
+                    単純な等速の補間ではなく、ベジェ曲線からxに対応するyを求めて<br />
+                    補間の割合として使っています。<br />
+                    これを入れることで、動きの緩急がMMDで再生したときと同じになります。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～つまずいたところ・工夫したところ～
+                </div>
+                <p class="text2-inner">
+                    【ファイル構造体のサイズが1バイトでもずれると全部壊れる】<br />
+                    PMDやVMDはファイル上のバイト列をそのまま構造体に読み込みます。<br />
+                    ところがC++の構造体は勝手にパディングが入るため、<br />
+                    そのまま読むとサイズがずれて、それ以降の読み込みが全滅します。<br />
+                    #pragma pack(1)でパディングを止めたうえで、<br />
+                    static_assertで構造体のサイズをコンパイル時に検査するようにしました。<br />
+                    「実行して初めて壊れていることに気付く」という状況をなくせたのが大きかったです。<br />
+                    <br />
+                    【行列の掛ける順番が逆になる】<br />
+                    HLSL側は既定で列優先なので、C++側で考えていた順番と<br />
+                    シェーダー内での掛ける順番が逆になります。<br />
+                    ここを間違えるとモデルが消えたり、あらぬ方向へ吹き飛んだりして、<br />
+                    原因を探すのに一番時間を使いました。<br />
+                    <br />
+                    【ディスクリプタヒープは同時に1本しかバインドできない】<br />
+                    CBV_SRV_UAVのディスクリプタヒープは同時に1本しか設定できないため、<br />
+                    シーン用の定数バッファ（b0）だけ別のヒープに置くことができません。<br />
+                    そこでb0のビューも、マテリアル用ヒープの先頭に同居させる形にしました。<br />
+                    <br />
+                    【アニメーションがカクついた】<br />
+                    最初は経過時間の取得にtimeGetTimeを使っていたのですが、<br />
+                    分解能が既定で約15.6msしかなく、60fpsだと経過時間が不規則に飛んでしまいます。<br />
+                    単調増加が保証されているstd::chrono::steady_clockに変えたところ、滑らかになりました。<br />
+                    <br />
+                    【初期化に失敗したときの切り分け】<br />
+                    ウィンドウの表示をモデル読み込みより前に持ってくるようにしました。<br />
+                    こうしておくと失敗したときに「ウィンドウすら出ない＝ウィンドウ生成の失敗」、<br />
+                    「ウィンドウは出たが真っ黒＝そこから先の失敗」と切り分けられます。<br />
+                    地味ですが、デバッグのしやすさがかなり変わりました。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～これからやること～
+                </div>
+                <p class="text2-inner">
+                    次の目標は、Blenderで自作したモデルをこのレンダラーで表示することです。<br />
+                    glTF（.glb）を読み込むためにcgltfというライブラリを組み込む準備まで進めています。<br />
+                    <br />
+                    PMDは頂点フォーマットが固定でしたが、glTFは<br />
+                    「どのデータがどこにどう並んでいるか」がファイル側の情報で決まるので、<br />
+                    読み込み部分をもう少し汎用的に作り直す必要があると考えています。<br />
+                    <br />
+                    その先では、影（シャドウマップ）やポストエフェクトにも挑戦したいです。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～開発環境～
+                </div>
+                <p class="text2-inner">
+                    ・言語：C++20<br />
+                    ・IDE：Visual Studio 2026（プラットフォームツールセット v145）<br />
+                    ・プラットフォーム：x64 / Windows 10・11<br />
+                    ・API：Direct3D 12 / DXGI / DirectXMath / HLSL<br />
+                    ・ライブラリ：DirectXTex（画像読み込み） / cgltf（glTF読み込み・導入中）<br />
+                    <br />
+                    学習にあたっては<a href="https://www.shoeisha.co.jp/book/detail/9784798161938">「DirectX
+                        12の魔導書 3Dレンダリングの基礎からMMDモデルを踊らせるまで」</a>を参考にしています。<br />
+                    <br />
+                    なお、リポジトリには再配布が許可されていないアセット（PMDモデルやVMDモーション）は<br />
+                    含めていません。動かす場合はREADMEの手順に沿って各自でご用意ください。
+                </p>
+            </div>
+
+            <div class="text2">
+                <div class="text-title">
+                    ～リンク～
+                </div>
+                <p class="text2-inner">
+                    <a href="https://github.com/Shiny-Sunset/DirectX12Renderer">GitHubリポジトリはこちら</a>
+                </p>
+            </div>
+        </section>
+    </main><!-- /main -->
+
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-icon">
+                <img src="common/images/Electric.png" alt="Pityu_Summer" />
+                <nav class="footer-nav">
+                    <ul class="footer-nav-links">
+                        <li class="footer-nav-item"><a href="https://github.com/Shiny-Sunset"
+                                class="btn footer-nav-button"><span>Github</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-text">
+                <div class="role">
+                    <div class="role-square"></div>
+                    <p class="footer-self-introduction-role">運営者</p>
+                </div>
+                <p class="footer-self-introduction-name">Sunset</p>
+                <p class="footer-self-introduction-university">東京電機大学大学院在学</p>
+                <p class="footer-self-introduction-comment">
+                    こんにちは！Sunsetです。大学院生です。<br />
+                    将来はゲームプログラマー目指してます。
+                </p>
+            </div>
+        </div>
+    </footer><!-- /footer -->
+</body>
+
+</html>

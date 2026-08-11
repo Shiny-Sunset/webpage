@@ -100,6 +100,9 @@ a.production-button:hover:after  { transform: translateX(-50%) translateY(0); }
 .production-list li:nth-child(6) .production-button:before,
 .production-list li:nth-child(6) .production-button:after { background: #C2F0FF; }
 
+.production-list li:nth-child(7) .production-button:before,
+.production-list li:nth-child(7) .production-button:after { background: #FFE8C2; }
+
 a.cancelled-button { background: #888; color: #ddd; }
 a.wip-button       { background: #555; }
 
