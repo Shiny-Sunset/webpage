@@ -82,26 +82,27 @@ a.production-button:after {
 a.production-button:hover:before { transform: translateX(50%)  translateY(0); }
 a.production-button:hover:after  { transform: translateX(-50%) translateY(0); }
 
-.production-list li:nth-child(1) .production-button:before,
-.production-list li:nth-child(1) .production-button:after { background: #E0C2FF; }
+/* ボタンのホバー色（成果物ごとに指定。並び順を変えても色はずれない） */
+.production-button.directx12renderer:before,
+.production-button.directx12renderer:after { background: #FFE8C2; }
 
-.production-list li:nth-child(2) .production-button:before,
-.production-list li:nth-child(2) .production-button:after { background: #C2FFD5; }
+.production-button.boidfishaquarium:before,
+.production-button.boidfishaquarium:after { background: #C2F0FF; }
 
-.production-list li:nth-child(3) .production-button:before,
-.production-list li:nth-child(3) .production-button:after { background: #CCCCCC; }
+.production-button.fingerguider:before,
+.production-button.fingerguider:after { background: #C2D5FF; }
 
-.production-list li:nth-child(4) .production-button:before,
-.production-list li:nth-child(4) .production-button:after { background: #F5C2FF; }
+.production-button.vrchat:before,
+.production-button.vrchat:after { background: #F5C2FF; }
 
-.production-list li:nth-child(5) .production-button:before,
-.production-list li:nth-child(5) .production-button:after { background: #C2D5FF; }
+.production-button.amida:before,
+.production-button.amida:after { background: #CCCCCC; }
 
-.production-list li:nth-child(6) .production-button:before,
-.production-list li:nth-child(6) .production-button:after { background: #C2F0FF; }
+.production-button.mini-fantasy:before,
+.production-button.mini-fantasy:after { background: #C2FFD5; }
 
-.production-list li:nth-child(7) .production-button:before,
-.production-list li:nth-child(7) .production-button:after { background: #FFE8C2; }
+.production-button.circleclicker:before,
+.production-button.circleclicker:after { background: #E0C2FF; }
 
 a.cancelled-button { background: #888; color: #ddd; }
 a.wip-button       { background: #555; }

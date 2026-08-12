@@ -74,6 +74,14 @@ a.play-button:hover {
     display: block;
 }
 
+/* 画像やアセットの権利表記用の小さめテキスト */
+.credit {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 1rem 0;
+}
+
 /* ========== Responsive (≤ 768px) ========== */
 @media (max-width: 768px) {
 
@@ -111,5 +119,9 @@ a.play-button:hover {
 
     .text2-video {
         width: 85vw;
+    }
+
+    .credit {
+        font-size: 1.3rem;
     }
 }
